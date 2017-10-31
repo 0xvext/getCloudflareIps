@@ -20,7 +20,7 @@ if ! cmp --silent /tmp/cloudflare-ips.txt /etc/nginx/cloudflare-allow.conf; then
     while read LINE
     do
         echo "allow $LINE;" >> /etc/nginx/cloudflare-allow.conf
-        echo "### Adding to /etc/nginx/cloudflare-allow.conf: allow" + $LINE + ";"
+        echo "### Adding to /etc/nginx/cloudflare-allow.conf: allow $LINE;
     done < /tmp/cloudflare-ips.txt
 
     #Remove the temporary file containing the raw IPs
